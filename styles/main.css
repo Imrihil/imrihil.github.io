@@ -1,0 +1,198 @@
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #1f3763;
+    border-radius: 0 0 50% 50%;
+    overflow: hidden;
+    display: flex;
+}
+
+.header .header-photo {
+    border-radius: 0 100% 50% 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.header .header-description {
+    color: #f0f0f0;
+}
+
+.header .header-description .header-subtitle {
+    color: #c0c0c0;
+}
+
+.header .header-description .header-title, .header .header-description .header-subtitle {
+    font-weight: bold;
+}
+
+@media (max-width: 575.98px) {
+    .header {
+        width: 200vw;
+        max-height: 200px;
+        margin: 0 0 0 -50vw;
+        padding: 0 50vw 0 50vw;
+    }
+
+    .header .header-photo {
+        width: auto;
+        height: 300px;
+        margin-top: -50px;
+    }
+
+    .header .header-photo * {
+        max-width: 150px;
+        max-height: 200px;
+        margin-top: 50px;
+    }
+
+    .header .header-description {
+        margin: 0px;
+    }
+
+    .header .header-description .header-title {
+        font-size: 25px;
+    }
+
+    .header .header-description .header-subtitle {
+        font-size: 20px;
+    }
+
+    .header .header-contact > a {
+        padding: 1px 12px 1px 12px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .header {
+        width: 200vw;
+        max-height: 400px;
+        margin: 0 0 0 -50vw;
+        padding: 0 50vw 0 50vw;
+    }
+
+    .header .header-photo {
+        width: auto;
+        height: 600px;
+        margin-top: -100px;
+    }
+
+    .header .header-photo * {
+        max-width: 300px;
+        max-height: 400px;
+        margin-top: 100px;
+    }
+
+    .header .header-description {
+        margin: auto 20px 20px 20px;
+    }
+
+    .header .header-description .header-title {
+        font-size: 50px;
+    }
+
+    .header .header-description .header-subtitle {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        max-width: 300px;
+        height: 200vh;
+        margin: -50vh 0 0 0;
+        padding: 50vh 0 50vh 0;
+        border-radius: 0;
+        display: block;
+        position: fixed;
+    }
+
+    .header .header-photo {
+        width: 500px;
+        height: 400px;
+        margin-left: -100px;
+        border-radius: 0 0 100% 50%;
+    }
+
+    .header .header-photo * {
+        max-width: 300px;
+        max-height: 400px;
+        margin-left: 100px;
+    }
+
+    .header .header-description .header-title {
+        font-size: 20px;
+    }
+
+    .header .header-description .header-subtitle {
+        font-size: 16px;
+    }
+
+    .header .header-contact img {
+        width: 32px;
+    }
+
+    .main {
+        padding-left: 300px;
+    }
+}
+
+.header .header-contact img {
+    width: 32px;
+}
+
+.header .header-contact > a {
+    color: #f0f0f0;
+    max-height: 50px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.header .header-contact > a:not([disabled]):hover {
+    color: #c0c0c0;
+}
+
+.header .header-contact .header-contact-data {
+    display: inline-flex;
+}
+
+.img-mail {
+    background-image: url(../data/mail.svg);
+    min-width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+a:hover > .img-mail {
+    background-image: url(../data/mail-hover.svg);
+}
+
+.img-phone {
+    background-image: url(../data/phone.svg);
+    min-width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+a:hover > .img-phone {
+    background-image: url(../data/phone-hover.svg);
+}
+
+.img-location {
+    background-image: url(../data/location.svg);
+    min-width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+a:hover > .img-location {
+    background-image: url(../data/location-hover.svg);
+}
