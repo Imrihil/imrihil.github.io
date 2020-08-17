@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/header.css" />
 
   <title>Ledzianowski Mateusz</title>
 </head>
 
 <body>
-  <div class="header">
+  <div class="header" id="header">
     <div class="header-photo">
       <img src="data/photo.jpg" alt="Mateusz Ledzianowski" />
     </div>
@@ -25,9 +26,9 @@
           <div class="img-mail"></div>
           <div class="header-contact-data">ledzianowskimateusz@gmail.com</div>
         </a>
-        <a class="header-phone btn btn-link" href="tel:+48987654321">
+        <a class="header-phone btn btn-link" href="tel:+48660881493">
           <div class="img-phone"></div>
-          <div class="header-contact-data">48 660 881 493</div>
+          <div class="header-contact-data">+48 660 881 493</div>
         </a>
         <a class="header-location btn btn-link" href="#" disabled>
           <div class="img-location"></div>
@@ -37,52 +38,132 @@
     </div>
   </div>
 
-  <div class="container main">
-    <div>Poznan, Poland</div>
-    +48 660 881 493
-
-    20.12.1994
-    ledzianowskimateusz@gmail.com
-    Experience
-    Awards
-    3rd Place Award in Data Ninja OLX Machine Learning Competition (2018)
-    Finalist of 20th Olympiad in Informatics (2013)
-    Finalist of 4th Netmasters Cup – Olympiad of knowledge about Internet (2013)
-    Employment
-    05/2019-…: Software Engineer in PSI Polska Sp. z o.o. (C#/.NET, Micro Services, DevOps)
-    11/2018-04/2019: C#/.NET Developer in Alliance Technology Polska Sp. z o.o.
-    03/2016-10/2018: Junior C#/.NET Developer in Alliance Technology Polska Sp. z o.o.
-    Projects
-    System supporting the work of the Polish Registry of Congenital Malformations C#, ASP.NET MVC, OracleSQL Engineer's
-    Thesis
-    Outranking-based rough set approach for multiple criteria sorting Java Master’s Thesis
-    Advertisement Classifier Python Data Ninja OLX Machine Learning Competition
-    RPG Cards Creator C#, WPF https://github.com/Imrihil/CardCreator
-    Shogun The Board Game Java https://github.com/Imrihil/Shogun
-    Splendor The Board Game C#, ASP.NET MVC https://github.com/Imrihil/Splendor
-    Skills
-    Programming languages:
-    C#, Java, SQL (advanced) and C/C++, OpenGL, PHP, JavaScript, Python (basic)
-    Other IT skills:
-    .NET Core, .NET Framework, .NET Standard, ASP.NET MVC, WPF, Micro Services, Web Sockets, Docker, Html, Css, Scss,
-    Bootstrap, Git, SVN, Azure DevOps, Jenkins, Jira, Mantis, Confluence, LaTeX
-    Foreign Languages:
-    English (B2/C1), German (A2)
-    Education
-    2017-2018: Poznan University of Technolgy
-    IT - Intelligent Decision Support Systems - Master of Science – graduated with distinction
-    2013-2017: Poznan University of Technolgy
-    IT - Bachelor of Science – graduated with distinction
-    2010-2013: Adam Mickiewicz High School in Poznan
-    IT academic class – graduated with distinction
-
-    Advantages Interests
-
-    Analitical mind, reliability, responsibility, accuracy, ease of cooperation, gentle disposition, attention to order
-    in the code, version control system and documentation
-    • Board/Role Playing/Strategy Battle Games
-    • Geostrategy
-    • Sport (football, tennis, volleyball)
+  <div class="container-fluid main pt-3">
+    <div class="jumbotron jumbotron-fluid p-4">
+      <div class="container-fluid">
+        <h1 class="display-4">Skills</h1>
+        <dl class="row">
+          <dt class="col-sm-2 text-right">Programming languages</dt>
+          <dd class="col-sm-10">
+            <h6>Experienced: C#, SQL</h6>
+            <p class="text-justify">Basics: Java, C/C++, OpenGL, PHP, JavaScript, Python</p>
+          </dd>
+          <dt class="col-sm-2 text-right">Other IT skills</dt>
+          <dd class="col-sm-10">
+            <p class="text-justify">.NET Core, .NET Framework, .NET Standard, ASP.NET MVC, WPF, Micro Services, Web
+              Sockets, Docker, Html, Css, Scss, Bootstrap, Git, SVN, Azure DevOps, Jenkins, Jira, Mantis, Confluence,
+              LaTeX</p>
+          </dd>
+          <dt class="col-sm-2 text-right">Foreign Languages</dt>
+          <dd class="col-sm-10">
+            <p class="text-justify">English (B2/C1), German (A2)</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid p-4">
+      <div class="container-fluid">
+        <h1 class="display-4">Experience</h1>
+        <dl class="row">
+          <dt class="col-sm-2 text-right">V&nbsp;2019 - now</dt>
+          <dd class="col-sm-10">
+            <h6>Software Engineer in PSI Polska Sp. z o.o.</h6>
+            <p class="text-justify">I am responsible for implementing Micro Services architecture in the company. I
+              create applications in
+              <b>C# .NET Core 3</b> and optimize software testing and implementation processes with <b>Azure DevOps</b>.
+            </p>
+          </dd>
+          <dt class="col-sm-2 text-right">XI&nbsp;2018 - IV&nbsp;2019</dt>
+          <dd class="col-sm-10">
+            <h6>C#/.NET Developer in Alliance Technology Polska Sp. z o.o.</h6>
+            <p class="text-justify">My main responsibility was to develop the company's core application, Varyon, for
+              business processes
+              management, which is primarily used in the insurance industry. The application is written in <b>C#</b>,
+              using <b>WPF</b>
+              and <b>Web Forms</b>.</p>
+          </dd>
+          <dt class="col-sm-2 text-right">III&nbsp;2016 - X&nbsp;2018</dt>
+          <dd class="col-sm-10">
+            <h6>Junior C#/.NET Developer in Alliance Technology Polska Sp. z o.o.</h6>
+            <p class="text-justify">My main responsibility was to develop the company's core application, Varyon, for
+              business processes
+              management, which is primarily used in the insurance industry. The application is written in <b>C#</b>,
+              using <b>WPF</b>
+              and <b>Web Forms</b>.</p>
+          </dd>
+          <dt class="col-sm-2 text-right">2017 - 2018</dt>
+          <dd class="col-sm-10">
+            <h6>Master’s Thesis – Outranking-based rough set approach for multiple criteria sorting</h6>
+            <p class="text-justify">I have proposed and described a decision support algorithm based on the rough-set
+              theory, in which the
+              traditionally used dominance relation is replaced by the superiority relation. I have implemented a
+              <b>Java</b>
+              application for the calculations.</p>
+          </dd>
+          <dt class="col-sm-2 text-right">2016 - 2017</dt>
+          <dd class="col-sm-10">
+            <h6>Engineer's Thesis – System supporting the work of the Polish Registry of Congenital Malformations</h6>
+            <p class="text-justify">In a team of 4 people we have created a web application to manage birth defects
+              data. They are introduced
+              by doctors using another web application with a form that we were improving. Both applications were
+              created in <b>C# .NET MVC</b> with <b>Oracle</b> database and the frontend based on <b>Bootstrap</b>.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid p-4">
+      <div class="container-fluid">
+        <h1 class="display-4">Education</h1>
+        <dl class="row">
+          <dt class="col-sm-2 text-right">2017-2018</dt>
+          <dd class="col-sm-10">
+            <h6>Poznan University of Technolgy</h6>
+            <p class="text-justify">IT - Intelligent Decision Support Systems - Master of Science – graduated with distinction</p>
+          </dd>
+          <dt class="col-sm-2 text-right">2013-2017</dt>
+          <dd class="col-sm-10">
+            <h6>Poznan University of Technolgy</h6>
+            <p class="text-justify">IT - Bachelor of Science – graduated with distinction</p>
+          </dd>
+          <dt class="col-sm-2 text-right">2010-2013</dt>
+          <dd class="col-sm-10">
+            <h6>Adam Mickiewicz High School in Poznan</h6>
+            <p class="text-justify">IT academic class – graduated with distinction</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid p-4">
+      <div class="container-fluid">
+        <h1 class="display-4">Prizes</h1>
+        <dl class="row">
+          <dt class="col-sm-2 text-right">2018</dt>
+          <dd class="col-sm-10">
+            <h6>3rd Place Award in Data Ninja OLX Machine Learning Competition</h6>
+          </dd>
+          <dt class="col-sm-2 text-right">2013</dt>
+          <dd class="col-sm-10">
+            <h6>Finalist of 20th Olympiad in Informatics</h6>
+          </dd>
+          <dt class="col-sm-2 text-right">2013</dt>
+          <dd class="col-sm-10">
+            <h6>Finalist of 4th Netmasters Cup – Olympiad of knowledge about Internet</h6>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid p-4">
+      <div class="container-fluid">
+        <h1 class="display-4">About me</h1>
+        <p class="text-justify">Since I was a child, I dreamt of becoming a programmer and learning computer science from an early age. In
+          this respect, I also chose schools and universities. Solving interesting problems, both aloghithmic and
+          architectural, gives me a lot of fun. Customer satisfaction with a job well done is an additional reward.</p>
+        <p class="text-justify">At work I value reliability and communicativeness. It is important for me to write a clean code that meets
+          SOLID principles and uses well-known design patterns.</p>
+        <p class="text-justify">Outside of work, I am interested in geopolitics, board games and rpg, and I like to play various sports,
+          especially football.</p>
+      </div>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -94,6 +175,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script src="scripts/main.js"></script>
 </body>
 
 </html>
