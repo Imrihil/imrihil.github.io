@@ -4,7 +4,7 @@
         <HxProgress>
             <HxProgressBar Value="@Character.HealthPercent"
                            Label="@($"{Character.Health}/{Character.FullHandSize}")"
-                           Color="@(Character.IsConscious ? ThemeColor.Success : ThemeColor.Danger)" />
+                           Color="@GetColor(Character.HealthPercent)" />
         </HxProgress>
     </div>
 }
@@ -12,4 +12,12 @@
 @code {
     [Parameter]
     public Character? Character { get; set; }
+
+    private ThemeColor? GetColor(int percent) => percent switch
+    {
+        <= 33 => ThemeColor.Danger,
+        <= 66 => ThemeColor.Warning,
+        _ => ThemeColor.Success
+    };
+
 }
