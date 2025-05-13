@@ -9,7 +9,9 @@
     <div class="d-flex flex-wrap mt-2 mb-2">
         @foreach (var card in _context.FightCards)
         {
-            <FightCardComponent Card=@card></FightCardComponent>
+            <div class="fight-card">
+                <FightCardComponent Card=@card></FightCardComponent>
+            </div>
         }
     </div>
 }
