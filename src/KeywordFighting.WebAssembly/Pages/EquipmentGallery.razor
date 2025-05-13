@@ -1,0 +1,27 @@
+﻿@page "/equipment"
+@inject IKeywordFightingContextProvider Provider
+
+@if (_context != null)
+{
+    <EquipmentsList Title="Bronie" List=@(_context.GetEquipment<Weapon>()) />
+    <EquipmentsList Title="Tarcze" List=@(_context.GetEquipment<Shield>()) />
+    <EquipmentsList Title="Zbroje" List=@(_context.GetEquipment<Armor>()) />
+    <EquipmentsList Title="Hełmy" List=@(_context.GetEquipment<Helmet>()) />
+    <EquipmentsList Title="Naramienniki" List=@(_context.GetEquipment<Bracers>()) />
+    <EquipmentsList Title="Nagolenniki" List=@(_context.GetEquipment<Greaves>()) />
+    <EquipmentsList Title="Bibeloty" List=@(_context.GetEquipment<Trinket>()) />
+    <EquipmentsList Title="Konsumpcyjne" List=@(_context.GetEquipment<Consumable>()) />
+}
+<div class="d-grid gap-2 mt-2 mb-2">
+    <a href="/" class="btn btn-light">Powrót</a>
+</div>
+
+@code {
+    KeywordFightingContext? _context;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _context = await Provider.GetAsync(CancellationToken.None);
+        await base.OnInitializedAsync();
+    }
+}

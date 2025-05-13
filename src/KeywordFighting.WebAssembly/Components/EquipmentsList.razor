@@ -1,0 +1,19 @@
+﻿<h3>@Title</h3>
+
+@if (@List != null)
+{
+    <div class="d-flex flex-wrap mt-2 mb-2">
+        @foreach (var equipment in List)
+        {
+            <EquipmentComponent Equipment=@equipment></EquipmentComponent>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public IEnumerable<Equipment>? List { get; set; }
+}

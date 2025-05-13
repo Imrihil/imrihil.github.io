@@ -1,0 +1,48 @@
+﻿@page "/melee-duel"
+@inject IGameEngine Engine
+@inject IGameContextProvider Provider
+<PageTitle>Keyword fighting melee duel</PageTitle>
+
+<h3>Pojedynek na ubitej ziemi</h3>
+
+@if (_context == null)
+{
+    <div class="lead mt-2 mb-2">Ładowanie...</div>
+}
+else
+{
+    <ContextComponent Context=@_context />
+    <div class="lead mt-2 mb-2">@_context.LastAction</div>
+    <div class="lead mt-2 mb-2">@_context.NextAction</div>
+
+    if (_context.IsInitialized && !_context.IsFinished)
+    {
+        <HandComponent Hand=@_context.Character.Hand
+                       Rotated=@(!_context.Character.HasInitiative)
+                       Limit=@_context.Character.FullHandSize
+                       OnClick=@(i => Engine.DoActionAsync(_context, i, CancellationToken.None)) />
+    }
+    else
+    {
+        <div class="d-grid gap-2 mt-2 mb-2">
+            @foreach (var (i, action) in _context.AvailableActions.Index())
+            {
+                <button class="btn btn-secondary" @onclick="() => Engine.DoActionAsync(_context, i, CancellationToken.None)">@action</button>
+            }
+        </div>
+    }
+}
+<div class="d-grid gap-2 mt-2 mb-2">
+    <a href="/" class="btn btn-light">Powrót</a>
+</div>
+
+@code {
+    private IGameContext? _context;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _context = await Provider.CreateAsync(CancellationToken.None);
+        await Engine.DoActionAsync(_context, 0, CancellationToken.None);
+        await base.OnInitializedAsync();
+    }
+}

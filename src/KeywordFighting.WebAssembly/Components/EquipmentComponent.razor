@@ -1,0 +1,35 @@
+﻿@if (Equipment != null)
+{
+    <div class="@GetClass(Equipment)">
+        <img src="@GetIcon(Equipment)" class="equipment-type" alt="@Equipment.TypeRaw" />
+        <div class="equipment-power">@Equipment.Power.Min</div>
+        <div class="equipment-name">@Equipment.Name</div>
+        <div class="card-keywords">@Equipment.Power.Advantages.GetDescription().Replace("/", " / ")</div>
+        <CostComponent Cost=@Equipment.Cost />
+    </div>
+}
+else
+{
+    <div class="equipment equipment-default"></div>
+}
+
+@code {
+    [Parameter]
+    public Equipment? Equipment { get; set; }
+
+    private string GetClass(Equipment equipment) =>
+        "equipment "
+        + equipment switch
+        {
+            Weapon weapon =>
+                $"equipment-{equipment.TypeRaw.ToLower()}{(weapon.IsTwoHanded ? "-2h" : "-1h")} ",
+            _ => $"equipment-{equipment.TypeRaw.ToLower()} "
+        }
+        + $"equipment-{equipment.Name.Replace(" ", " - ")} {(equipment == Equipment.Default(equipment) ? "equipment-default" : "")}";
+
+    private string GetIcon(Equipment equipment) => equipment switch
+    {
+        Weapon weapon => $"icons/{equipment.TypeRaw.ToLower()}{(weapon.IsTwoHanded ? "-2h" : "-1h")}.svg",
+        _ => $"icons/{equipment.TypeRaw.ToLower()}.svg"
+    };
+}

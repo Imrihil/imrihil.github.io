@@ -1,0 +1,25 @@
+﻿@if (Context != null)
+{
+    <div class="d-flex flex-wrap">
+        <div class="m-2">
+            <CharacterStatusComponent Character=@Context.Character />
+
+            <CharacterHealthBar Character=@Context.Character />
+
+            <EquipmentsComponent Equipments=@Context.Character.Equipment.ToList() />
+        </div>
+
+        <div class="m-2">
+            <CharacterStatusComponent Character=@Context.Enemy />
+
+            <CharacterHealthBar Character=@Context.Enemy />
+
+            <EquipmentsComponent Equipments=@Context.Enemy.Equipment.ToList() />
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public IGameContext? Context { get; set; }
+}

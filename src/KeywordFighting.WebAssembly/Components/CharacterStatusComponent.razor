@@ -1,0 +1,23 @@
+﻿@if (Character != null)
+{
+    <div>
+        <h4 class="d-inline">@Character.Name</h4>
+        @if (Character.IsStunned)
+        {
+            <span class="badge text-bg-danger align-top ms-1">Ogłuszenie</span>
+        }
+        @if (Character.Strengthened > 0)
+        {
+            <span class="badge text-bg-warning align-top ms-1">Obrażenia x2</span>
+        }
+        @if (Character.CounterattackResistance > 0)
+        {
+            <span class="badge text-bg-success align-top ms-1">Odporność na kontratak</span>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Character? Character { get; set; }
+}

@@ -1,0 +1,15 @@
+﻿@if (Character != null)
+{
+    <div class="mt-2 mb-2">
+        <HxProgress>
+            <HxProgressBar Value="@Character.HealthPercent"
+                           Label="@($"{Character.Health}/{Character.FullHandSize}")"
+                           Color="@(Character.IsConscious ? ThemeColor.Success : ThemeColor.Danger)" />
+        </HxProgress>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Character? Character { get; set; }
+}
