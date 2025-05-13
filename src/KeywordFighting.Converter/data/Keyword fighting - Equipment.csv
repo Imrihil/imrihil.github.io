@@ -1,0 +1,50 @@
+typ,nazwa,ręce,miażdżone,kłute,sieczne,kontra,koszt
+weapon,Ręce,1,0.5,0,0,0,0.0
+weapon,Nóż,1,0,0.5,0,0,2.4
+weapon,Sztylet,1,0,0.5,0.5,1,3.4
+weapon,Miecz treningowy,1,0.5,0,0.5,1,3.5
+weapon,Topór,2,1,1,1.5,1,5.2
+weapon,Pałka,2,1.5,1,1,1,5.3
+weapon,Włócznia,2,1,1.5,1,2,6.3
+weapon,Oszczep,1,1,1.5,1,2,7.1
+weapon,Krótki miecz,1,1,1,1.5,2,7.2
+weapon,Halabarda,2,2,2.5,2.5,2,13.0
+weapon,Nadziak,1,2,2.5,2,2,13.1
+weapon,Młot,1,2.5,2,2,2,13.8
+weapon,Długi miecz,2,2,2,2.5,3,15.2
+weapon,Szpada,1,2,2.5,2,3,16.5
+weapon,Gizarma,2,3,3.5,3,3,27.4
+weapon,Buzdygan,2,3.5,3,3,3,28.9
+weapon,Glewia,2,3,3.5,3.5,3,30.4
+weapon,Rycerska szabla,1,3,3,3.5,4,39.4
+,,,,,,,
+shield,Tarcza,1,,,,,3.0
+,,,,,,,
+helmet,Nic,,0,0,0,,0
+helmet,Kaptur,,2,1,1,,0.6
+helmet,Kapelusz,,2,1,1,,0.6
+helmet,Łebka,,2,2,3,,1.3
+helmet,Kaptur kolczy,,2,3,3,,1.6
+helmet,Kapalin,,3,3,4,,2.5
+helmet,Armet,,4,4,4,,4.0
+,,,,,,,
+armor,Nic,,0,0,0,,0
+armor,Koszula,,2,1,1,,2.3
+armor,Przeszywanica,,3,2,2,,4.7
+armor,Kolczuga,,2,3,3,,5.9
+armor,Brygantyna,,3,3,4,,9.3
+armor,Płytowy napierśnik,,4,4,4,,14.8
+,,,,,,,
+bracers,Nic,,0,0,0,,0
+bracers,Rękawice,,2,1,1,,1.1
+bracers,Skórzane karwasze,,3,2,2,,2.3
+bracers,Rękawy kolcze,,2,3,3,,2.8
+bracers,Rękawy lamelkowe,,3,3,4,,4.5
+bracers,Płytowe karwasze,,4,4,4,,7.2
+,,,,,,,
+greaves,Nic,,0,0,0,,0
+greaves,Kalesony,,2,1,1,,0.9
+greaves,Garbowane spodnie,,3,2,2,,1.9
+greaves,Spodnie kolcze,,2,3,3,,2.4
+greaves,Spodnie lamelkowe,,3,3,4,,3.8
+greaves,Płytowe nagolenice,,4,4,4,,6.0

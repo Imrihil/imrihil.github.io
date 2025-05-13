@@ -1,0 +1,27 @@
+﻿@page "/cards"
+@inject IKeywordFightingContextProvider Provider
+
+<h3>Karty walki</h3>
+
+@if (_context != null)
+{
+    <div class="d-flex flex-wrap mt-2 mb-2">
+        @foreach (var card in _context.FightCards)
+        {
+            <FightCardComponent Card=@card></FightCardComponent>
+        }
+    </div>
+}
+<div class="d-grid gap-2 mt-2 mb-2">
+    <a href="/" class="btn btn-light">Powrót</a>
+</div>
+
+@code {
+    KeywordFightingContext? _context;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _context = await Provider.GetAsync(CancellationToken.None);
+        await base.OnInitializedAsync();
+    }
+}

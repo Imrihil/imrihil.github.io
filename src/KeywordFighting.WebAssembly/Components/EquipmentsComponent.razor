@@ -1,0 +1,39 @@
+﻿@if (Equipments != null)
+{
+    <div class="d-flex equipment-container">
+        <div class="d-flex flex-column align-self-start">
+            <EquipmentComponent Equipment=@Weapon />
+            @if (Shield != null)
+            {
+                <EquipmentComponent Equipment=@Shield />
+            }
+            @if (Trinket != null)
+            {
+                <EquipmentComponent Equipment=@Trinket />
+            }
+        </div>
+        <div class="d-flex flex-column align-self-start">
+            <EquipmentComponent Equipment=@Helmet />
+            <EquipmentComponent Equipment=@Armor />
+        </div>
+        <div class="d-flex flex-column align-self-start">
+            <EquipmentComponent Equipment=@Consumable />
+            <EquipmentComponent Equipment=@Bracers />
+            <EquipmentComponent Equipment=@Greaves />
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public List<Equipment>? Equipments { get; set; }
+
+    private Weapon Weapon => Equipments?.OfType<Weapon>().FirstOrDefault() ?? Weapon.Default;
+    public Shield? Shield => Equipments?.OfType<Shield>().FirstOrDefault() ?? Shield.Default;
+    public Helmet Helmet => Equipments?.OfType<Helmet>().FirstOrDefault() ?? Helmet.Default;
+    public Armor Armor => Equipments?.OfType<Armor>().FirstOrDefault() ?? Armor.Default;
+    public Bracers Bracers => Equipments?.OfType<Bracers>().FirstOrDefault() ?? Bracers.Default;
+    public Greaves Greaves => Equipments?.OfType<Greaves>().FirstOrDefault() ?? Greaves.Default;
+    public Consumable? Consumable => Equipments?.OfType<Consumable>().FirstOrDefault() ?? Consumable.Default;
+    public Trinket? Trinket => Equipments?.OfType<Trinket>().FirstOrDefault() ?? Trinket.Default;
+}

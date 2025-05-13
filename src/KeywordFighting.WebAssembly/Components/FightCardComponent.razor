@@ -1,0 +1,51 @@
+﻿@if (Card != null)
+{
+    <div class="fight-card-attack">
+        <img src="@GetIcon(Card.Attack.Target)" class="fight-card-target" alt="@Card.Attack.Target" />
+        <EffectivenessComponent Effectiveness=@Card.Attack.Effectiveness />
+        <div class="d-flex flex-column justify-content-center fight-card-effects">
+            <div class="fight-card-damage">@($"{Card.Attack.Damage ?? 0:0.##}")</div>
+            @if (Card.Attack.Stun > 0)
+            {
+                <img src="@StunIcon" class="fight-card-effect stun" alt="stun" />
+            }
+            @if (Card.Attack.CounterattackResistance > 0)
+            {
+                <img src="@CounterattackResistanceIcon" class="fight-card-effect fight-card-counterattack-resistance" alt="counterattack resistance" />
+            }
+            @if (Card.Attack.Strengthen > 0)
+            {
+                <img src="@StrengthenIcon" class="fight-card-effect fight-card-strengthen" alt="strengthen" />
+            }
+            @if (Card.Attack.Healing > 0)
+            {
+                <div class="fight-card-effect fight-card-healing-serious">@((int)Card.Attack.Healing)</div>
+                @if (Card.Attack.Healing - (int)Card.Attack.Healing > 0)
+                {
+                    <div class="fight-card-effect fight-card-healing-light">1</div>
+                }
+            }
+        </div>
+        <div class="card-name">@Card.Attack.Name</div>
+        <div class="card-keywords">@Card.Attack.Advantage.Advantages.GetDescription()</div>
+        <div class="card-description">@Card.Attack.Description</div>
+    </div>
+    <div class="fight-card-defense">
+        <EffectivenessComponent Effectiveness=@Card.Defense.Effectiveness />
+        <div class="card-name">@Card.Defense.Name</div>
+        <div class="card-description">@Card.Defense.Description</div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public FightCard? Card { get; set; }
+
+    [Parameter]
+    public bool? Rotated { get; set; }
+
+    private string GetIcon(TargetEnum target) => $"icons/{target.GetEquipmentType().ToString().ToLower()}.svg";
+    private const string StunIcon = "icons/stun.svg";
+    private const string CounterattackResistanceIcon = "icons/counterattack-resistance.svg";
+    private const string StrengthenIcon = "icons/strengthen.svg";
+}

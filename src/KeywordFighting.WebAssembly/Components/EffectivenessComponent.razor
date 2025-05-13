@@ -1,0 +1,33 @@
+﻿@if (Effectiveness != null)
+{
+    <div class="d-flex fight-card-effectiveness">
+        <div class="@GetClass(Effectiveness.Block)">
+            <img src="icons/block.svg" alt="block" />
+        </div>
+        <div class="@GetClass(Effectiveness.Repulse)">
+            <img src="icons/repulse.svg" alt="repulse" />
+        </div>
+        <div class="@GetClass(Effectiveness.Dodge)">
+            <img src="icons/dodge.svg" alt="dodge" />
+        </div>
+        <div class="@GetClass(Effectiveness.Capture)">
+            <img src="icons/capture.svg" alt="capture" />
+        </div>
+        <div class="@GetClass(Effectiveness.Counterattack)">
+            <img src="icons/counterattack.svg" alt="counterattack" />
+        </div>
+    </div>
+}
+
+@code {
+
+    [Parameter]
+    public Effectiveness? Effectiveness { get; set; }
+
+    private string GetClass(int? value) => value switch
+    {
+        > 0 => "fight-card-effectiveness-defense",
+        < 0 => "fight-card-effectiveness-hit",
+        _ => "fight-card-effectiveness-none",
+    };
+}

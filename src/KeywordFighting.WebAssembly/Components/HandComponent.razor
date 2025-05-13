@@ -1,0 +1,29 @@
+﻿@if (Hand != null)
+{
+    <div class="d-flex flex-wrap m-2">
+        @foreach (var (i, card) in Hand.Fights.Index())
+        {
+            <button class="@($"{(Rotated == true ? "fight-card fight-card-rotate" : "fight-card")}")" @onclick=@(()=>OnClick.InvokeAsync(i))>
+                <FightCardComponent Card=@card Rotated=@Rotated />
+            </button>
+        }
+        @foreach (var card in Hand.Wounds.Take(Limit ?? int.MaxValue))
+        {
+            <WoundCardComponent Card=@card />
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public Hand? Hand { get; set; }
+
+    [Parameter]
+    public int? Limit { get; set; }
+
+    [Parameter]
+    public bool? Rotated { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnClick { get; set; }
+}

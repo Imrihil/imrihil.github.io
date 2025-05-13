@@ -1,0 +1,26 @@
+﻿<div class="equipment-cost">
+    @if (Gold > 0)
+    {
+        <div class="equipment-cost-gold">@Gold</div>
+    }
+    @if (Silver > 0)
+    {
+        <div class="equipment-cost-silver">@Silver</div>
+    }
+    @if (Copper > 0)
+    {
+        <div class="equipment-cost-copper">@Copper</div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public double Cost
+    {
+        get => Gold + (double)Silver / 10 + (double)Copper / 100;
+        set => (Gold, Silver, Copper) = value.GetCurrency();
+    }
+    private int Gold { get; set; }
+    private int Silver { get; set; }
+    private int Copper { get; set; }
+}

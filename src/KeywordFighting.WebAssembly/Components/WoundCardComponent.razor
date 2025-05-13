@@ -1,0 +1,22 @@
+﻿<div class="d-flex flex-column align-items-center justify-content-center @GetClass(Card)">
+    <div class="card-name">
+        @Card?.Name
+    </div>
+    @if (Card is StunCard)
+    {
+        <img src="icons/stun.svg" alt="stun"/>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public WoundCard? Card { get; set; }
+
+    private string GetClass(WoundCard? card) => card switch
+    {
+        StunCard => "wound-card stun-card",
+        LightWoundCard => "wound-card light-wound-card",
+        SeriousWoundCard => "wound-card serious-wound-card",
+        _ => "wound-card"
+    };
+}
