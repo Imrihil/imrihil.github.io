@@ -61,7 +61,7 @@ internal class GameInitializationEngine(ILogger logger) : IGameEngine
                     context.Enemy.Gold = context.Character.Gold.Value * Math.Pow(2, (double)index / 2 - 1);
                     context.Enemy.Equipment = GenerateEquipment(context, context.Enemy.Gold.Value);
                     for (var i = 0; i < 4; i++)
-                        context.EquipmentPropositions.Add(GenerateEquipment(context, context.Character.Gold.Value).ToList());
+                        context.EquipmentPropositions.Add(GenerateEquipment(context, context.Character.Gold.Value).OrderBy(equipment => equipment.Type).ToList());
 
                     var enemyEquipment = context.Enemy.Equipment.ToList();
                     context.LastAction = $"Przeciwnik posiada {enemyEquipment.GetDescription()} warte {enemyEquipment.Cost():0.##} sztuk złota.";
