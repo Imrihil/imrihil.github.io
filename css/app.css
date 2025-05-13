@@ -1,0 +1,457 @@
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    color-scheme: light only;
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+    .blazor-error-boundary::after {
+        content: "An error has occurred."
+    }
+
+.loading-progress {
+    position: relative;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 20vh auto 1rem auto;
+}
+
+    .loading-progress circle {
+        fill: none;
+        stroke: #e0e0e0;
+        stroke-width: 0.6rem;
+        transform-origin: 50% 50%;
+        transform: rotate(-90deg);
+    }
+
+        .loading-progress circle:last-child {
+            stroke: #1b6ec2;
+            stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+            transition: stroke-dasharray 0.05s ease-in-out;
+        }
+
+.loading-progress-text {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+
+    .loading-progress-text:after {
+        content: var(--blazor-load-percentage-text, "Loading");
+    }
+
+code {
+    color: #c02d76;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+.equipment-container {
+    min-width: 360px;
+    max-width: 360px;
+}
+
+.equipment {
+    border: solid 1px #342919;
+    border-radius: 10px;
+    background-color: #422e11;
+    opacity: 0.8;
+    background-image: radial-gradient( ellipse farthest-corner at 10px 10px, #544228, #544228 50%, #422e11 50%);
+    background-size: 10px 10px;
+    position: relative;
+    margin: 1px;
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+    .equipment.equipment-default {
+        background-color: #292821;
+        opacity: 0.8;
+        background-image: radial-gradient( ellipse farthest-corner at 10px 10px, #323129, #323129 50%, #292821 50%);
+        background-size: 10px 10px;
+    }
+
+    .equipment.equipment-weapon-2h {
+        min-width: 120px;
+        max-width: 120px;
+        min-height: 360px;
+        max-height: 360px;
+    }
+
+    .equipment.equipment-weapon-1h,
+    .equipment.equipment-armor {
+        min-width: 120px;
+        max-width: 120px;
+        min-height: 240px;
+        max-height: 240px;
+    }
+
+        .equipment.equipment-weapon-1h .equipment-power,
+        .equipment.equipment-weapon-2h .equipment-power {
+            background: #a50f0f;
+            border-radius: 0% 100% 12% 88% / 0% 88% 12% 100%;
+        }
+
+    .equipment .equipment-power {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2px;
+        padding: 2px;
+        text-align: center;
+        background: #478036;
+        width: 22px;
+        height: 26px;
+        border-radius: 50% 50% 50% 50% / 5% 5% 95% 95%;
+    }
+
+    .equipment .equipment-type {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 2px;
+        padding: 2px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .equipment .equipment-name {
+        position: absolute;
+        bottom: 22px;
+        width: 115px;
+        max-height: 36px;
+        margin: 2px;
+        padding: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        text-overflow: clip;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        line-height: 1;
+    }
+
+    .equipment .card-keywords {
+        top: 28px;
+        width: 115px;
+        max-height: 54px;
+        overflow-wrap: break-word;
+    }
+
+    .equipment .equipment-cost {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: end;
+        text-overflow: clip;
+    }
+
+        .equipment .equipment-cost .equipment-cost-gold,
+        .equipment .equipment-cost .equipment-cost-silver,
+        .equipment .equipment-cost .equipment-cost-copper {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            padding: 2px;
+            margin: 0 1px;
+            text-align: center;
+            border-radius: 16px;
+            line-height: 1;
+        }
+
+        .equipment .equipment-cost .equipment-cost-gold {
+            background: #cfc61a;
+            color: #3e220a;
+        }
+
+        .equipment .equipment-cost .equipment-cost-silver {
+            background: #676767;
+        }
+
+        .equipment .equipment-cost .equipment-cost-copper {
+            background: #523c14;
+        }
+
+.wound-card,
+.fight-card {
+    border: solid 1px #292821;
+    border-radius: 10px;
+    position: relative;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 350px;
+    max-height: 350px;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+.wound-card {
+    background-color: #a50f0f;
+    opacity: 0.8;
+    background: linear-gradient(135deg, #b73f3f55 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #b73f3f 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #b73f3f55 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #b73f3f 25%, #a50f0f 25%) 0px 0/ 20px 20px;
+    text-align: center;
+}
+
+    .wound-card div {
+        vertical-align: middle;
+        position: relative;
+    }
+
+    .wound-card img {
+        margin: 5px;
+        width: 80px;
+        height: 80px;
+    }
+
+.fight-card {
+    background-color: #5b5245;
+    opacity: 0.8;
+    background-image: linear-gradient(135deg, #6b6357 25%, transparent 25%), linear-gradient(225deg, #6b6357 25%, transparent 25%), linear-gradient(45deg, #6b6357 25%, transparent 25%), linear-gradient(315deg, #6b6357 25%, #5b5245 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 10px 10px;
+    background-repeat: repeat;
+}
+
+    .fight-card:hover {
+        background-color: #6b6357;
+        opacity: 0.8;
+        background-image: linear-gradient(135deg, #7b746a 25%, transparent 25%), linear-gradient(225deg, #7b746a 25%, transparent 25%), linear-gradient(45deg, #7b746a 25%, transparent 25%), linear-gradient(315deg, #7b746a 25%, #6b6357 25%);
+        background-position: 10px 0, 10px 0, 0 0, 0 0;
+        background-size: 10px 10px;
+        background-repeat: repeat;
+    }
+
+    .fight-card.fight-card-rotate {
+        transform: rotate(180deg);
+    }
+
+    .fight-card .fight-card-effectiveness {
+        position: absolute;
+        top: 0;
+        left: 37px;
+        width: 175px;
+        height: 30px;
+    }
+
+        .fight-card .fight-card-effectiveness div {
+            margin: 0 1px;
+            width: 34px;
+            height: 35px;
+            text-align: center;
+            background: #424548;
+            mask: conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/68px 100%
+        }
+
+        .fight-card .fight-card-effectiveness img {
+            vertical-align: top;
+            margin: 4px;
+            width: 18px;
+        }
+
+        .fight-card .fight-card-effectiveness .fight-card-effectiveness-defense {
+            background: #478036;
+            background: linear-gradient(0deg,rgba(71, 128, 54, 0) 0%, rgba(71, 128, 54, 0.5) 50%, rgba(71, 128, 54, 1) 100%);
+        }
+
+        .fight-card .fight-card-effectiveness .fight-card-effectiveness-hit {
+            background: #A50F0F;
+            background: linear-gradient(0deg,rgba(165, 15, 15, 0) 0%, rgba(165, 15, 15, 0.5) 50%, rgba(165, 15, 15, 1) 100%);
+        }
+
+        .fight-card .fight-card-effectiveness .fight-card-effectiveness-none {
+            background: #7d716a;
+            background: linear-gradient(0deg, rgba(125, 113, 106, 0) 0%, rgba(125, 113, 106, 0.5) 50%, rgba(125, 113, 106, 1) 100%);
+        }
+
+    .fight-card .fight-card-attack {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 195px;
+        border-bottom: 3px dotted #7D716A;
+    }
+
+        .fight-card .fight-card-attack .fight-card-target {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 2px;
+            width: 35px;
+            height: 30px;
+            text-align: center;
+        }
+
+
+        .fight-card .fight-card-attack .fight-card-effects {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35px;
+            text-align: center;
+        }
+
+            .fight-card .fight-card-attack .fight-card-effects * {
+                margin: 2px 0;
+                width: 35px;
+                height: 30px;
+                vertical-align: middle;
+            }
+
+            .fight-card .fight-card-attack .fight-card-effects .fight-card-damage {
+                margin: 2px auto;
+                padding: 2px;
+                width: 22px;
+                height: 26px;
+                text-align: center;
+                background: #a50f0f;
+                border-radius: 0% 100% 12% 88% / 0% 88% 12% 100%;
+            }
+
+            .fight-card .fight-card-attack .fight-card-effects .fight-card-stun {
+            }
+
+            .fight-card .fight-card-attack .fight-card-effects .fight-card-counterattack-resistance {
+            }
+
+            .fight-card .fight-card-attack .fight-card-effects .fight-card-strengthen {
+            }
+
+            .fight-card .fight-card-attack .fight-card-effects .fight-card-healing-serious {
+                margin: 2px auto;
+                width: 20px;
+                background: #255827;
+                border-radius: 80% 20% 50% 50% / 80% 80% 20% 20%;
+            }
+
+            .fight-card .fight-card-attack .fight-card-effects .fight-card-healing-light {
+                margin: 2px auto;
+                width: 20px;
+                background: #496c4a;
+                border-radius: 80% 20% 50% 50% / 80% 80% 20% 20%;
+            }
+
+        .fight-card .fight-card-attack .card-name {
+            top: 32px;
+            width: 216px;
+            max-height: 18px;
+            font-weight: bold;
+        }
+
+        .fight-card .fight-card-attack .card-keywords {
+            top: 52px;
+            width: 216px;
+            max-height: 18px;
+        }
+
+        .fight-card .fight-card-attack .card-description {
+            top: 72px;
+            width: 216px;
+            max-height: 121px;
+        }
+
+    .fight-card .fight-card-defense {
+        position: absolute;
+        left: 250px;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+
+        .fight-card .fight-card-defense .fight-card-effectiveness {
+            direction: rtl;
+        }
+
+        .fight-card .fight-card-defense .card-name {
+            top: 32px;
+            width: 246px;
+            max-height: 18px;
+        }
+
+        .fight-card .fight-card-defense .card-description {
+            top: 52px;
+            width: 246px;
+            max-height: 126px;
+        }
+
+.card-name {
+    position: absolute;
+    margin: 2px;
+    padding: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    text-overflow: clip;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    line-height: 1;
+}
+
+.card-keywords {
+    position: absolute;
+    margin: 2px;
+    padding: 2px;
+    line-height: 1;
+    text-transform: lowercase;
+    text-align: center;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+
+.card-description {
+    position: absolute;
+    margin: 2px;
+    padding: 2px;
+    font-size: 0.9em;
+    line-height: 1.2;
+    text-align: center;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    font-style: italic;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
